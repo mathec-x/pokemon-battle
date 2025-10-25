@@ -1,0 +1,44 @@
+
+### List
+GET http://localhost:3001/api/v1/pokemons
+Content-Type: application/json
+
+### Get
+GET http://localhost:3001/api/v1/pokemons/2
+Content-Type: application/json
+
+### CREATE
+POST http://localhost:3001/api/v1/pokemons
+Content-Type: application/json
+
+{
+  "type": "Charizard",
+  "trainer": "Zoraia"
+}
+
+# {
+#   "type": "Pikachu",
+#   "trainer": "Ash Ketchum"
+# }
+
+# {
+#   "type": "Bulbasaur",
+#   "trainer": "Jon Snow"
+# }
+
+### update
+PUT http://localhost:3001/api/v1/pokemons/10
+Content-Type: application/json
+
+{
+  "trainer": "Soraia"
+}
+
+### DELETE
+DELETE http://localhost:3001/api/v1/pokemons/15
+Content-Type: application/json
+
+
+### BATTLE
+POST http://localhost:3001/api/v1/battle/26/27
+Content-Type: application/json

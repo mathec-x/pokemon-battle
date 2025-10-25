@@ -1,0 +1,8 @@
+
+### Web Docs
+GET http://localhost:3001/docs
+
+
+### Json Docs
+GET http://localhost:3001/docs.json
+Content-Type: application/json

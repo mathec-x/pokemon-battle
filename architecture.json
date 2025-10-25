@@ -1,0 +1,48 @@
+{
+  "src": {
+    "adapters": {
+      "persistence": "Repository implementations (Prisma, etc.)",
+      "modules": "Module implementations (NestJS, etc.)",
+      "controllers": {
+        "ExpressAdapter.ts": "HTTP controllers (ExpressAdapter, routes, etc.)"
+      },
+      "gateways": "External API gateways (Kafka, RabbitMQ, APIs, SendGrid, etc.)",
+      "_adapters.md": "Concrete implementations of the application ports."
+    },
+    "application": {
+      "ports": {
+        "repositories": "Repository interfaces (UserRepository, etc.)",
+        "services": "Service interfaces (UserService, etc.)",
+        "gateways": "Gateway interfaces (KafkaGateway, etc.)",
+        "_ports.md": "Interfaces for the application layer"
+      },
+      "dtos": "Data Transfer Objects (UserDTO, etc.)",
+      "services": "Application services (UserService, etc.)",
+      "mappers": "Mappers (UserMapper, etc.)",
+      "validators": "Validation classes (UserValidator, etc.)",
+      "use-cases": "Use cases (CreateUser, etc.)"
+    },
+    "core": {
+      "entities": "Represent main objects and concepts of the system",
+      "services": {
+        "_domain-services.md": "Domain services, small classes that encapsulate specific business rules"
+      },
+      "value-objects": {
+        "_value-objects.md": "Value objects are immutable objects that represent a descriptive aspect of the domain with no conceptual identity."
+      },
+      "aggregates": "Aggregate roots that manage the lifecycle of related entities.",
+      "exceptions": "Domain-related Exceptions",
+      "domain-events": "Domain events that represent something that has happened in the domain."
+    },
+    "infrastructure": {
+      "http": "HTTP framework configuration (Koa, Express, etc.)",
+      "database": "Database configuration (Prisma, etc.)",
+      "config": "General configuration (Logger, env, etc.)",
+      "bootstrap": "Application bootstrap (server.ts, NestBootstrap, etc.)"
+    },
+    "main.ts": "Application entry point"
+  },
+  "tests": {
+    "main-e2e.spec.ts": "Main application tests"
+  }
+}
