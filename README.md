@@ -400,4 +400,19 @@ pokedex/
 
 ---
 
+## 🧩 Considerações Finais
+
+Esse projeto foi estruturado em cima da minha lib [ts-node-app](https://www.npmjs.com/package/ts-node-app), seguindo a Arquitetura Hexagonal.
+A ideia foi construir algo bem organizado, desacoplado e fácil de manter — sem depender de frameworks que engessam demais.
+
+Durante o desenvolvimento, implementei adapters manuais para Express, Swagger e Logger.
+A intenção é mover tudo isso pra dentro da lib, de forma que, ao iniciar um novo projeto, o código desses adapters seja copiado automaticamente, permitindo que cada dev edite e adapte à vontade, sem restrições impostas por biblioteca.
+
+Confesso que me diverti demais criando esse projeto 😄
+E como o tema é Pokémon, não teve um só dia sem aquela musiquinha grudada na cabeça — “Pegá-los eu tentarei…” 🎶
+
+No fim das contas, montar um projeto bem estruturado assim não é difícil — só exige um pouco de organização e clareza nas responsabilidades.
+Mas é claro: dependendo da equipe e do contexto, pode fazer mais sentido usar algo como o NestJS, que já entrega muita coisa pronta.
+Aqui eu preferi manter tudo mais explícito e modular, com o uso intenso de factories e separação de camadas bem definida.
+
 Desenvolvido com ❤️ usando Arquitetura Hexagonal + TypeScript
