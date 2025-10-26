@@ -66,7 +66,7 @@ export class ExpressAdapter {
         const path = layer.route.path;
         this.logger.http(
           'Registered route:',
-          methods.join().toUpperCase().padEnd(5),
+          methods.join().toUpperCase().padEnd(7),
           this.prefix + path,
         );
       }

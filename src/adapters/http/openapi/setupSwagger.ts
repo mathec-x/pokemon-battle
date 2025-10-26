@@ -11,9 +11,9 @@ export function setupSwagger(app: Router) {
   const document = generator.generateDocument({
     openapi: '3.1.0',
     info: {
-      title: process.env.APPLICATION_NAME,
+      title: process.env.APPLICATION_NAME || 'Pokédex API',
       version: '1.0.0',
-      description: 'Documentação',
+      description: 'Documentação da API Pokédex',
       contact: {
         email: 'mathec@live.com',
         name: 'Matheus Correa',

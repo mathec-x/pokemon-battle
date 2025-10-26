@@ -1,7 +1,8 @@
 import { PokemonMapper } from '@/application/mappers/PokemonMapper';
+import { CreatePokemonUseCasePort } from '@/application/ports/services/UseCasePorts';
 import { PokemonRepository } from '@/infrastructure/database/repositories/PokemonRepository';
 
-export class CreatePokemonUseCase {
+export class CreatePokemonUseCase implements CreatePokemonUseCasePort {
 
   constructor(
     private readonly repository: PokemonRepository,

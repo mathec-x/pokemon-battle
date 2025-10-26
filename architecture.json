@@ -1,48 +1,49 @@
 {
   "src": {
     "adapters": {
-      "persistence": "Repository implementations (Prisma, etc.)",
-      "modules": "Module implementations (NestJS, etc.)",
-      "controllers": {
-        "ExpressAdapter.ts": "HTTP controllers (ExpressAdapter, routes, etc.)"
+      "cache": "implementação do adaptador de cache Redis",
+      "http": {
+        "errors": "manipulador de erros HTTP",
+        "express": "adaptadores Express para servidor HTTP, testes e documentação",
+        "openapi": "configuração e tipos para documentação OpenAPI/Swagger"
       },
-      "gateways": "External API gateways (Kafka, RabbitMQ, APIs, SendGrid, etc.)",
-      "_adapters.md": "Concrete implementations of the application ports."
+      "logger": "adaptador de logging com testes"
     },
     "application": {
+      "mappers": "mapeadores para conversão de dados do domínio Pokemon",
       "ports": {
-        "repositories": "Repository interfaces (UserRepository, etc.)",
-        "services": "Service interfaces (UserService, etc.)",
-        "gateways": "Gateway interfaces (KafkaGateway, etc.)",
-        "_ports.md": "Interfaces for the application layer"
+        "gateways": "portas para gateways externos",
+        "repositories": "portas para repositórios de Pokemon",
+        "services": "portas para casos de uso, mappers e serviços de logging"
       },
-      "dtos": "Data Transfer Objects (UserDTO, etc.)",
-      "services": "Application services (UserService, etc.)",
-      "mappers": "Mappers (UserMapper, etc.)",
-      "validators": "Validation classes (UserValidator, etc.)",
-      "use-cases": "Use cases (CreateUser, etc.)"
+      "services": {
+        "logger": "serviço de logging da aplicação"
+      },
+      "use-cases": {
+        "pokemon": "casos de uso para operações CRUD, cache e batalha de Pokemon"
+      }
     },
     "core": {
-      "entities": "Represent main objects and concepts of the system",
-      "services": {
-        "_domain-services.md": "Domain services, small classes that encapsulate specific business rules"
-      },
-      "value-objects": {
-        "_value-objects.md": "Value objects are immutable objects that represent a descriptive aspect of the domain with no conceptual identity."
-      },
-      "aggregates": "Aggregate roots that manage the lifecycle of related entities.",
-      "exceptions": "Domain-related Exceptions",
-      "domain-events": "Domain events that represent something that has happened in the domain."
+      "exceptions": "exceções customizadas para validação e recursos não encontrados",
+      "services": "documentação dos serviços de domínio"
     },
     "infrastructure": {
-      "http": "HTTP framework configuration (Koa, Express, etc.)",
-      "database": "Database configuration (Prisma, etc.)",
-      "config": "General configuration (Logger, env, etc.)",
-      "bootstrap": "Application bootstrap (server.ts, NestBootstrap, etc.)"
+      "bootstrap": "inicialização da aplicação",
+      "config": "configurações e tipos globais",
+      "database": {
+        "prisma": "cliente Prisma, schema e arquivos gerados",
+        "repositories": "implementação dos repositórios de Pokemon"
+      },
+      "factories": "factories para criação de rotas Pokemon",
+      "http": {
+        "middlewares": "middlewares de validação Zod",
+        "routes": "definição das rotas Pokemon",
+        "schemas": "schemas de validação Pokemon"
+      }
     },
-    "main.ts": "Application entry point"
-  },
-  "tests": {
-    "main-e2e.spec.ts": "Main application tests"
+    "shared": {
+      "helpers": "funções utilitárias como ucFirst"
+    },
+    "main.ts": "ponto de entrada principal da aplicação"
   }
 }

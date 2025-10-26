@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
+    "target": "es2022",
     "outDir": "./dist",
     "esModuleInterop": true,
     "strictNullChecks": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    // "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [

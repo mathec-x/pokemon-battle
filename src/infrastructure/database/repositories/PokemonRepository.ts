@@ -1,7 +1,8 @@
+import { PokemonRepositoryPort } from '@/application/ports/repositories/PokemonRepositoryPort';
 import { LoggerService } from '@/application/services/logger/LoggerService';
 import { prisma } from '@/infrastructure/database/prisma/client';
 
-export class PokemonRepository {
+export class PokemonRepository implements PokemonRepositoryPort {
   private readonly logger = new LoggerService(PokemonRepository.name);
 
   getPokemon(id: number) {

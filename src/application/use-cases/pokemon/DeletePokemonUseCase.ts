@@ -1,6 +1,7 @@
+import { DeletePokemonUseCasePort } from '@/application/ports/services/UseCasePorts';
 import { PokemonRepository } from '@/infrastructure/database/repositories/PokemonRepository';
 
-export class DeletePokemonUseCase {
+export class DeletePokemonUseCase implements DeletePokemonUseCasePort {
 
   constructor(
     private readonly repository: PokemonRepository

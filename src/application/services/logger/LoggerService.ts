@@ -1,6 +1,7 @@
 import { LoggerAdapter } from '@/adapters/logger/LoggerAdapter';
+import { LoggerServicePort } from '@/application/ports/services/LoggerServicePort';
 
-export class LoggerService extends LoggerAdapter {
+export class LoggerService extends LoggerAdapter implements LoggerServicePort {
   protected levels = {
     'VERBOSE': 'grey',
     'DEBUG': 'debug',

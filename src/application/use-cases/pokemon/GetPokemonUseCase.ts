@@ -1,8 +1,9 @@
 import { PokemonMapper } from '@/application/mappers/PokemonMapper';
+import { GetPokemonUseCasePort } from '@/application/ports/services/UseCasePorts';
 import { NotFoundException } from '@/core/exceptions/NotFoundException';
 import { PokemonRepository } from '@/infrastructure/database/repositories/PokemonRepository';
 
-export class GetPokemonUseCase {
+export class GetPokemonUseCase implements GetPokemonUseCasePort {
 
   constructor(
     private readonly repository: PokemonRepository,

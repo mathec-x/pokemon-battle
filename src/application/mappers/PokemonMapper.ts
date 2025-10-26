@@ -1,4 +1,6 @@
 
+import { PokemonMapperPort } from '@/application/ports/services/PokemonMapperPort';
+
 interface PokemonData {
   id: number;
   level: number;
@@ -6,7 +8,7 @@ interface PokemonData {
   trainer: string;
 }
 
-export class PokemonMapper {
+export class PokemonMapper implements PokemonMapperPort {
   format(data: PokemonData) {
     return {
       id: data.id,

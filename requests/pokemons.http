@@ -11,15 +11,15 @@ Content-Type: application/json
 POST http://localhost:3001/api/v1/pokemons
 Content-Type: application/json
 
-{
-  "type": "Charizard",
-  "trainer": "Zoraia"
-}
-
 # {
-#   "type": "Pikachu",
-#   "trainer": "Ash Ketchum"
+#   "type": "Charizard",
+#   "trainer": "Zoraia"
 # }
+
+{
+  "type": "Pikachu",
+  "trainer": "Ash Ketchum"
+}
 
 # {
 #   "type": "Bulbasaur",
@@ -40,5 +40,5 @@ Content-Type: application/json
 
 
 ### BATTLE
-POST http://localhost:3001/api/v1/battle/26/27
+POST http://localhost:3001/api/v1/battle/1/2
 Content-Type: application/json

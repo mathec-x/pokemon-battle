@@ -1,23 +1,35 @@
 
 import { ExpressTestAdapter, type ExpressTestModule } from '@/adapters/http/express/ExpressTestAdapter';
-import { makeUserFactoryRoute } from '@/infrastructure/factories/pokemon/PokemonFactoryRoute';
+import { makePokemonFactoryRoute } from '@/infrastructure/factories/pokemon/PokemonFactoryRoute';
 
-describe('GET /', () => {
+const prismaMock = {
+  pokemon: {
+    findMany: jest.fn(),
+    create: jest.fn(),
+  },
+};
+
+jest.mock('@prisma/client', () => ({
+  PrismaClient: jest.fn(() => prismaMock),
+}));
+
+
+describe('Pokemon E2E Tests', () => {
   let app: ExpressTestModule;
 
   beforeAll(() => {
     app = new ExpressTestAdapter()
-      .setPrefix('/api')
+      .setPrefix('/api/v1')
       .createTestModule({
-        factories: [makeUserFactoryRoute]
+        factories: [makePokemonFactoryRoute]
       });
   });
 
-  it('should responds with json message', async () => {
+  it('should responds with pokemon list', async () => {
     const response = await app
-      .get('/api/user')
+      .get('/api/v1/pokemons')
       .expect(200);
 
-    expect(response.body).toStrictEqual({ body: 'Get User Ok' });
+    expect(Array.isArray(response.body)).toBe(true);
   });
 });

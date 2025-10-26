@@ -1,9 +1,10 @@
 import { PokemonMapper } from '@/application/mappers/PokemonMapper';
+import { BattlePokemonUseCasePort } from '@/application/ports/services/UseCasePorts';
 import { LoggerService } from '@/application/services/logger/LoggerService';
 import { NotFoundException } from '@/core/exceptions/NotFoundException';
 import { PokemonRepository } from '@/infrastructure/database/repositories/PokemonRepository';
 
-export class BattlePokemonUseCase {
+export class BattlePokemonUseCase implements BattlePokemonUseCasePort {
   private readonly logger = new LoggerService(BattlePokemonUseCase.name);
 
   constructor(
