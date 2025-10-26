@@ -15,7 +15,7 @@ import {
   updatePokemonSchema
 } from '@/infrastructure/http/schemas/pokemon.schema';
 
-export class PokemonRouter extends OpenApiAdapter {
+export class PokemonController extends OpenApiAdapter {
   constructor(
     private readonly getPokemon: GetPokemonUseCase,
     private readonly listPokemon: ListPokemonUseCase,
@@ -53,7 +53,7 @@ export class PokemonRouter extends OpenApiAdapter {
       response: pokemonResponseSchema.meta({ statusCode: 201 })
     }, async (req, res) => {
       try {
-        const output = await this.createPokemon.execute(req.body.type, req.body.trainer);
+        const output = await this.createPokemon.execute(req.body.tipo, req.body.treinador);
         res.json(output);
       } catch (error) {
         return new HttpError().handle(req, res, error);
@@ -65,7 +65,7 @@ export class PokemonRouter extends OpenApiAdapter {
       params: pokemonParamsSchema.meta({ statusCode: 204 })
     }, async (req, res) => {
       try {
-        await this.updatePokemon.execute(Number(req.params.id), req.body.trainer);
+        await this.updatePokemon.execute(Number(req.params.id), req.body.treinador);
         res.end();
       } catch (error) {
         return new HttpError().handle(req, res, error);

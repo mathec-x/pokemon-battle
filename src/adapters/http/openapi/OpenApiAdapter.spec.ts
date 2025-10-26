@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendZodWithOpenApi, OpenApiGeneratorV31 } from '@asteasolutions/zod-to-openapi';
 import { Router } from 'express';
-import { inspect } from 'util';
 import { z } from 'zod';
 import { OpenApiAdapter } from './OpenApiAdapter';
 
@@ -53,8 +52,8 @@ describe('OpenApiAdapter', () => {
       }
     });
 
-    console.log('components', inspect(document.components, { depth: null }));
-    console.log('paths', inspect(document.paths, { depth: null }));
+    // console.log('components', inspect(document.components, { depth: null }));
+    // console.log('paths', inspect(document.paths, { depth: null }));
 
     expect(document.openapi).toBe('3.1.0');
     expect(document.info.title).toBe('Api');

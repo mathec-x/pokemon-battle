@@ -1,16 +1,17 @@
-const { compilerOptions } = require('./tsconfig.json')
-const { pathsToModuleNameMapper } = require('ts-jest')
 
 /**
  * @type {import('jest').Config}
+ * @type {import('ts-jest').JestConfigWithTsJest}
  */
-module.exports = {
+export default {
   clearMocks: true,
   collectCoverage: true,
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>' }),
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   preset: 'ts-jest',
   testEnvironment: 'node',
   // setupFilesAfterEnv: ["<rootDir>/tests/prisma-setup.ts"],
   // globalSetup: "<rootDir>/tests/test-setup.ts",
   // globalTeardown: "<rootDir>/tests/test-teardown.ts"
-}
+};

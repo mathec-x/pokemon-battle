@@ -19,7 +19,7 @@ export class PokemonRepository implements PokemonRepositoryPort {
       data: {
         type,
         trainer,
-        level: 7
+        level: 3
       },
     });
   }

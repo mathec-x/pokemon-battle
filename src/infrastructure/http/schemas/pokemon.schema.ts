@@ -35,8 +35,8 @@ export const listPokemonResponseSchema = z
 
 export const createPokemonSchema = z
   .object({
-    type: z.string(),
-    trainer: z.string()
+    tipo: z.string(),
+    treinador: z.string()
   }).meta({
     name: 'CreatePokemonSchema',
     description: 'Cria um registro na tabela de pokémons.'
@@ -44,7 +44,7 @@ export const createPokemonSchema = z
 
 export const updatePokemonSchema = z
   .object({
-    trainer: z.string()
+    treinador: z.string()
   }).meta({
     name: 'UpdatePokemonSchema',
     description: 'Apenas a propriedade `treinador` pode ser alterada.'

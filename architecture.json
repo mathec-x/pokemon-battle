@@ -1,6 +1,7 @@
 {
   "src": {
     "adapters": {
+      "controllers": "controladores para gerenciar as requisições HTTP",
       "cache": "implementação do adaptador de cache Redis",
       "http": {
         "errors": "manipulador de erros HTTP",
@@ -37,7 +38,6 @@
       "factories": "factories para criação de rotas Pokemon",
       "http": {
         "middlewares": "middlewares de validação Zod",
-        "routes": "definição das rotas Pokemon",
         "schemas": "schemas de validação Pokemon"
       }
     },
