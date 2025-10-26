@@ -50,34 +50,24 @@ export class OpenApiAdapter {
       this.logger.debug(`Registrando schema ${registerKey} code: ${meta.statusCode}`);
     }
 
-    if (statusCode) {
-      res[statusCode] = {
-        description: 'Ok',
-        content: schema?.response && {
-          'application/json': {
-            schema: schema?.response
-          }
+    res[statusCode] = {
+      description: 'Ok',
+      content: schema?.response && {
+        'application/json': {
+          schema: schema?.response
         }
-      };
-    }
+      }
+    };
 
     OpenApiAdapter.registry.registerPath({
       path: path,
       method: method,
       responses: {
         ...res,
-        400: {
-          description: 'Validation error'
-        },
-        404: {
-          description: 'Resource not found'
-        },
-        409: {
-          description: 'Duplicate resource'
-        },
-        500: {
-          description: 'Internal server error'
-        }
+        400: { description: 'Validation error' },
+        404: { description: 'Resource not found' },
+        409: { description: 'Duplicate resource' },
+        500: { description: 'Internal server error' }
       },
       request: {
         query: schema.query as any,
