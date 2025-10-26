@@ -63,7 +63,7 @@ src/
 ### 1. Clone e instale
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/mathec-x/pokemon-battle.git
 cd pokedex
 npm install
 ```
