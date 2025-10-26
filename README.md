@@ -72,11 +72,11 @@ npm install
 
 ```bash
 # Sobe o PostgreSQL com PostGIS
-npm run docker:db:up
+npm run db:up
 
 # Gera o cliente Prisma e sincroniza schema
-npm run prisma:generate
-npm run prisma:push
+npm run db:generate
+npm run db:push
 ```
 
 ### 3. Execute em desenvolvimento
@@ -93,7 +93,7 @@ npm run dev --env=staging --log=debug
 
 - **API**: http://localhost:3001
 - **Swagger Docs**: http://localhost:3001/docs
-- **Prisma Studio**: `npm run prisma:studio`
+- **Prisma Studio**: `npm run db:studio`
 
 ## 🛣️ Rotas da API
 
@@ -259,10 +259,10 @@ npm run docker:run:prod
 ### Banco de dados
 ```bash
 # Subir PostgreSQL com PostGIS
-npm run docker:db:up
+npm run db:up
 
 # Parar banco
-npm run docker:db:down
+npm run db:down
 ```
 
 ### Multi-stage Build
@@ -361,9 +361,9 @@ pokedex/
 - `npm run dev --env=staging --log=debug` - Com configurações customizadas
 
 ### Database  
-- `npm run prisma:generate` - Gera cliente Prisma
-- `npm run prisma:push` - Sincroniza schema com BD
-- `npm run prisma:studio` - Interface visual do BD
+- `npm run db:generate` - Gera cliente Prisma
+- `npm run db:push` - Sincroniza schema com BD
+- `npm run db:studio` - Interface visual do BD
 
 ### Testing
 - `npm run test` - Testes com coverage
@@ -375,7 +375,7 @@ pokedex/
 - `npm start` - Executa versão buildada
 
 ### Docker
-- `npm run docker:db:up/down` - Gerencia banco PostgreSQL
+- `npm run db:up/down` - Gerencia banco PostgreSQL
 - `npm run docker:dev/prod` - Build e run da aplicação
 
 ---
