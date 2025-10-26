@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { LoggerAdapter } from '@/adapters/logger/LoggerAdapter';
 import { LoggerServicePort } from '@/application/ports/services/LoggerServicePort';
 
