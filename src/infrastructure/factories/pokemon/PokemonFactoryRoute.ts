@@ -1,3 +1,4 @@
+import { BattleController } from '@/adapters/controllers/battle/battleController';
 import { PokemonController } from '@/adapters/controllers/pokemon/pokemonController';
 import { PokemonMapper } from '@/application/mappers/PokemonMapper';
 import { BattlePokemonUseCase } from '@/application/use-cases/pokemon/BattlePokemonUseCase';
@@ -16,6 +17,9 @@ export const makePokemonFactoryRoute = () => new PokemonController(
   new ListPokemonUseCase(repository, mapper),
   new UpdatePokemonUseCase(repository),
   new DeletePokemonUseCase(repository),
-  new CreatePokemonUseCase(repository, mapper),
+  new CreatePokemonUseCase(repository, mapper)
+);
+
+export const makeBattleFactoryRoute = () => new BattleController(
   new BattlePokemonUseCase(repository, mapper)
 );

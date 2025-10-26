@@ -27,9 +27,10 @@ export class ZodValidation {
           }
         }
 
-        if (statusCode) {
-          res.status(statusCode);
-        };
+        // i need to think about this
+        // if (statusCode) {
+        res.status(statusCode);
+        // };
 
         next();
       } catch (err: any) {

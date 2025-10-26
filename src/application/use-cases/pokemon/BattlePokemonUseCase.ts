@@ -31,8 +31,7 @@ export class BattlePokemonUseCase implements BattlePokemonUseCasePort {
 
     this.logger.warn(`${pokemon1.type} (nível ${pokemon1.level}) vs ${pokemon2.type} (nível ${pokemon2.level})`);
     this.logger.warn(`Probabilidade ${pokemon1.type}: ${(pokemon1Probability * 100).toFixed(1)}%`);
-    // pausa dramática
-    await Promise.resolve(() => setTimeout(() => { }, 1000));
+
     this.logger.warn(`Valor aleatório: ${randomValue.toFixed(3)}`);
     this.logger.warn(`Vencedor: ${pokemon1Wins ? pokemon1.type : pokemon2.type}`);
 

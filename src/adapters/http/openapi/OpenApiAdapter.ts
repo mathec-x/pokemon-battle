@@ -47,7 +47,7 @@ export class OpenApiAdapter {
         statusCode = meta.statusCode;
       }
 
-      this.logger.debug(`Registrando schema ${registerKey} code: ${meta.statusCode}`);
+      this.logger.verbose(`Registrando schema ${registerKey} code: ${meta.statusCode}`);
     }
 
     res[statusCode] = {

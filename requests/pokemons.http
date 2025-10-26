@@ -27,7 +27,7 @@ Content-Type: application/json
 # }
 
 ### update
-PUT http://localhost:3001/api/v1/pokemons/10
+PUT http://localhost:3001/api/v1/pokemons/28
 Content-Type: application/json
 
 {
@@ -35,10 +35,10 @@ Content-Type: application/json
 }
 
 ### DELETE
-DELETE http://localhost:3001/api/v1/pokemons/15
+DELETE http://localhost:3001/api/v1/pokemons/24
 Content-Type: application/json
 
 
 ### BATTLE
-POST http://localhost:3001/api/v1/battle/1/2
+POST http://localhost:3001/api/v1/battle/27/28
 Content-Type: application/json

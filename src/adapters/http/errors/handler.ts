@@ -1,6 +1,5 @@
 import { LoggerService } from '@/application/services/logger/LoggerService';
 import { NotFoundException } from '@/core/exceptions/NotFoundException';
-import { ValidationException } from '@/core/exceptions/ValidationException';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import { Request, Response } from 'express';
@@ -24,10 +23,6 @@ export class HttpError {
 
     if (err instanceof NotFoundException) {
       return res.status(404).json({ message: err.message });
-    }
-
-    if (err instanceof ValidationException) {
-      return res.status(400).json({ message: 'Validation error' });
     }
 
     if (err instanceof PrismaClientKnownRequestError) {

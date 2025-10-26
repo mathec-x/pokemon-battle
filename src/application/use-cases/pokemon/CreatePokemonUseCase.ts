@@ -11,11 +11,6 @@ export class CreatePokemonUseCase implements CreatePokemonUseCasePort {
 
   async execute(type: string, trainer: string) {
     const data = await this.repository.createPokemon(type, trainer);
-
-    if (!data) {
-      throw new Error('Erro ao criar pokémon');
-    }
-
     return this.mapper.format(data);
   }
 }
