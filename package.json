@@ -12,7 +12,7 @@
     "start": "node --env-file .env.production dist/main.js",
     "build": "tsup src/main.ts",
     "prisma:generate": "dotenv -e .env.${npm_config_env:-development} -- prisma generate",
-    "prisma:push": "dotenv -e .env.${npm_config_env:-development} -- prisma db push",
+    "prisma:push": "dotenv -e .env.${npm_config_env:-development} -- prisma db push && npm run prisma:generate",
     "prisma:studio": "dotenv -e .env.${npm_config_env:-development} -- prisma studio",
     "docker:dev": "npm run docker:build:dev && npm run docker:run:dev",
     "docker:run:dev": "docker run --rm -it -p 3001:3001 --name $npm_package_name -v ./:/app $npm_package_name:dev",
