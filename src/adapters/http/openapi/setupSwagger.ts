@@ -10,6 +10,12 @@ export function setupSwagger(app: Router) {
   const generator = new OpenApiGeneratorV31(OpenApiAdapter.registry.definitions);
   const document = generator.generateDocument({
     openapi: '3.1.0',
+    servers: [
+      {
+        url: 'http://localhost:3001/api/v1',
+        description: 'Servidor local v1',
+      }
+    ],
     info: {
       title: process.env.APPLICATION_NAME || 'Pokédex API',
       version: '1.0.0',
